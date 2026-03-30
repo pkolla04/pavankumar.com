@@ -1,0 +1,61 @@
+{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<section class="container py-5" style="max-width: 800px; margin: 0 auto;">
+  <article>
+    <h1 class="mb-3">{{ .Title }}</h1>
+
+    <div class="mb-4" style="color: var(--text-secondary-color);">
+      {{ with .Params.venue }}<span class="badge" style="font-size: 0.9rem;">{{ . }}</span>{{ end }}
+      {{ with .Date }}<span class="ms-2">{{ .Format "January 2006" }}</span>{{ end }}
+    </div>
+
+    {{ with .Params.abstract }}
+    <div class="mb-4 p-3" style="border-left: 3px solid var(--primary-color); background: var(--secondary-background-color); border-radius: 0 8px 8px 0;">
+      <strong>Abstract:</strong> {{ . }}
+    </div>
+    {{ end }}
+
+    <div class="mb-4">
+      {{ with .Params.doi }}
+      <a href="https://doi.org/{{ . }}" class="btn btn-primary btn-sm me-2" target="_blank" rel="noopener">
+        <i class="fas fa-link"></i> DOI
+      </a>
+      {{ end }}
+      {{ with .Params.pdf }}
+      <a href="{{ . }}" class="btn btn-outline-primary btn-sm me-2" target="_blank" rel="noopener">
+        <i class="fas fa-file-pdf"></i> PDF
+      </a>
+      {{ end }}
+      {{ with .Params.code }}
+      <a href="{{ . }}" class="btn btn-outline-primary btn-sm me-2" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i> Code
+      </a>
+      {{ end }}
+      {{ with .Params.slides }}
+      <a href="{{ . }}" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener">
+        <i class="fas fa-presentation"></i> Slides
+      </a>
+      {{ end }}
+    </div>
+
+    {{ if .Params.citation_count }}
+    <div class="mb-4">
+      <strong>Citations:</strong> {{ .Params.citation_count }}
+    </div>
+    {{ end }}
+
+    <div class="content">
+      {{ .Content }}
+    </div>
+
+    {{ with .Params.tags }}
+    <div class="mt-4">
+      {{ range . }}
+      <span class="badge me-1">{{ . }}</span>
+      {{ end }}
+    </div>
+    {{ end }}
+  </article>
+</section>
+{{ end }}
