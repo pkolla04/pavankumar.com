@@ -16,7 +16,7 @@ enableRobotsTXT: true
 
 services:
   googleAnalytics:
-    id: ""  # Add your GA4 measurement ID here: G-XXXXXXXXXX
+    id: "G-X2KSRJ82M1"
 
 pagination:
   pagerSize: 10
