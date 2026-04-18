@@ -86,7 +86,7 @@ export function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors"
+                        className="inline-flex items-center gap-1.5 py-2 -my-1 text-xs text-muted-foreground hover:text-primary transition-colors"
                       >
                         <GitHubIcon size={13} /> Source
                       </a>
@@ -96,7 +96,7 @@ export function Projects() {
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary transition-colors"
+                        className="inline-flex items-center gap-1.5 py-2 -my-1 text-xs text-muted-foreground hover:text-primary transition-colors"
                       >
                         <ExternalLink size={13} /> Demo
                       </a>

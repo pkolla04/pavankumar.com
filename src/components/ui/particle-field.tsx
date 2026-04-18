@@ -50,6 +50,8 @@ export function ParticleField({ className = "" }: { className?: string }) {
       canvas.height = rect.height * devicePixelRatio;
       canvas.style.width = rect.width + "px";
       canvas.style.height = rect.height + "px";
+      // Reset transform so DPR scale doesn't accumulate across resizes (phone rotation, etc.)
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.scale(devicePixelRatio, devicePixelRatio);
       initParticles(rect.width, rect.height);
     };
