@@ -60,6 +60,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
+            // Escape "</" so a stray "</script>" in any string value can't break out of the tag.
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
@@ -76,7 +77,7 @@ export default function RootLayout({
                 "https://github.com/pavankumarkolla",
                 "https://linkedin.com/in/pavankumarkolla",
               ],
-            }),
+            }).replace(/</g, "\\u003c"),
           }}
         />
       </head>
