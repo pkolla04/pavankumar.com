@@ -31,10 +31,9 @@ jobs:
         run: npm ci
 
       - name: Build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /pavankumar.com
         run: npm run build
-
-      - name: Add CNAME
-        run: echo "pavankumar.com" > out/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
