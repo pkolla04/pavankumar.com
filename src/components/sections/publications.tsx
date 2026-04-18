@@ -69,7 +69,7 @@ export function Publications() {
                     </div>
 
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-start justify-between gap-4 mb-2">
+                      <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2 mb-2">
                         <h3 className="text-base font-semibold text-foreground leading-tight group-hover:text-primary transition-colors">
                           {pub.title}
                         </h3>
@@ -99,7 +99,9 @@ export function Publications() {
                         {pub.doi && (
                           <a
                             href={`https://doi.org/${pub.doi}`}
-                            className="ml-auto flex items-center gap-1.5 text-xs text-primary hover:text-primary/80 transition-colors"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="ml-auto inline-flex items-center gap-1.5 py-2 -my-1 text-xs text-primary hover:text-primary/80 transition-colors"
                           >
                             <ExternalLink size={12} /> DOI
                           </a>
@@ -107,7 +109,9 @@ export function Publications() {
                         {pub.code && (
                           <a
                             href={pub.code}
-                            className="flex items-center gap-1.5 text-xs text-primary hover:text-primary/80 transition-colors"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 py-2 -my-1 text-xs text-primary hover:text-primary/80 transition-colors"
                           >
                             <Code2 size={12} /> Code
                           </a>

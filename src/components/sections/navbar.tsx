@@ -69,7 +69,8 @@ export function Navbar() {
           </div>
 
           <button
-            className="md:hidden p-2 text-muted-foreground hover:text-foreground"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            className="md:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 text-muted-foreground hover:text-foreground"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X size={18} /> : <Menu size={18} />}

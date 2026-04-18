@@ -11,7 +11,7 @@ const titleWords = "Pavan Kumar.".split(" ");
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 gradient-mesh" />
       <ParticleField />
 

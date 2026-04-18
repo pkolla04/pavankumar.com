@@ -36,7 +36,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="text-muted-foreground/40 hover:text-foreground transition-colors"
+                className="inline-flex items-center justify-center w-11 h-11 -m-2 text-muted-foreground/40 hover:text-foreground transition-colors"
               >
                 <Icon size={15} />
               </a>
